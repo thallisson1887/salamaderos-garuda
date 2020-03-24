@@ -1,3 +1,3 @@
 # garuda-settings-manager
-
-Settings manager for garuda linux
+it is a modified version of manjaro-settings-manager
+for garuda linux
