@@ -108,6 +108,7 @@ KernelModel::update()
 
         if ( ( runningKernel.majorVersion() == newKernel.majorVersion() ) &&
                 ( runningKernel.minorVersion() == newKernel.minorVersion() ) &&
+                ( runningKernel.version() <= newKernel.version() ) &&
                 ( runningKernel.isRealtime() == newKernel.isRealtime() ) )
             newKernel.setRunning( true );
 
@@ -345,6 +346,7 @@ KernelModel::getRunningKernel() const
     uname.start( "uname", QStringList() << "-r" );
     uname.waitForFinished();
     QString result = uname.readAllStandardOutput();
+//    result = result.trimmed();
     uname.close();
 
     Kernel kernel;
@@ -352,8 +354,8 @@ KernelModel::getRunningKernel() const
     QString version = QString( "%1.%2" ).arg( aux.at( 0 ) ).arg( aux.at( 1 ) );
     if ( result.contains( "-rt" ) )
         version.append( "rt" );
-    kernel.setVersion( version );
-//    qDebug()<< version;
+    kernel.setVersion( result );
+//    qDebug()<< result;
     return kernel;
 }
 
