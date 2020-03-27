@@ -84,8 +84,10 @@ KernelCommon::installKernel( const QModelIndex& index )
     QStringList modules = qvariant_cast<QStringList>( index.data( KernelModel::InstalledModulesRole ) );
     QString kernel = qvariant_cast<QString>( index.data( KernelModel::PackageRole ) );
     QString version = qvariant_cast<QString>( index.data( KernelModel::VersionRole ) );
+    QString kernelh = qvariant_cast<QString>( index.data( KernelModel::PackageRole ) );
+    QString headers = kernelh.append("-headers");
     QStringList packageList;
-    packageList << kernel << modules;
+    packageList << kernel << modules << headers;
 
     QString title = QString( tr( "Install Linux %1" ) ).arg( version );
     QString message = QString( tr( "New Kernel package(s) is/are ready to install. \nWould you like to continue?" ) );
@@ -121,8 +123,10 @@ KernelCommon::removeKernel( const QModelIndex& index )
     QStringList modules = qvariant_cast<QStringList>( index.data( KernelModel::InstalledModulesRole ) );
     QString kernel = qvariant_cast<QString>( index.data( KernelModel::PackageRole ) );
     QString version = qvariant_cast<QString>( index.data( KernelModel::VersionRole ) );
+        QString kernelh = qvariant_cast<QString>( index.data( KernelModel::PackageRole ) );
+    QString headers = kernelh.append("-headers");
     QStringList packageList;
-    packageList << kernel << modules;
+    packageList << kernel << modules << headers;
 
 
     QString title = QString( tr( "Remove Linux %1" ) ).arg( version );
