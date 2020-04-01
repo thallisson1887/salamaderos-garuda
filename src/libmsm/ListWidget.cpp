@@ -1,7 +1,7 @@
 /*
  *  This file is part of Garuda Settings Manager.
  *
- *  Roland Singer <roland@garuda.org>
+ *  Roland Singer <roland@manjaro.org>
  *
  *  Garuda Settings Manager is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by

@@ -1,6 +1,6 @@
 /*
  *  mhwd - Garuda Hardware Detection
- *  Roland Singer <roland@garuda.org>
+ *  Roland Singer <roland@manjaro.org>
  *
  *  Copyright (C) 2007 Free Software Foundation, Inc.
  *

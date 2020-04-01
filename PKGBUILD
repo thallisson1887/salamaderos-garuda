@@ -1,4 +1,4 @@
-# Maintainer : Ramon Buldo <ramon@garuda.org>
+# Maintainer : Ramon Buldo <ramon@manjaro.org>
 
 pkgbase=garuda-settings-manager
 pkgname=('garuda-settings-manager' 'garuda-settings-manager-kcm' 

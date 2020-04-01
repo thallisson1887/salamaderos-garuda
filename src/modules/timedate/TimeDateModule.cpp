@@ -1,7 +1,7 @@
 /*
  *  This file is part of Garuda Settings Manager.
  *
- *  Ramon Buldó <ramon@garuda.org>
+ *  Ramon Buldó <ramon@manjaro.org>
  *  Kacper Piwiński
  *
  *  Garuda Settings Manager is free software: you can redistribute it and/or modify
@@ -54,7 +54,7 @@ TimeDateModule::TimeDateModule( QWidget* parent, const QVariantList& args ) :
                                             KAboutLicense::LicenseKey::GPL_V3,
                                             "(c) 2014 - 2019 Garuda Settings Manager developers" );
     aboutData->addAuthor( "Ramon Buldó",
-                          QStringLiteral( "ramon@garuda.org" ) );
+                          QStringLiteral( "ramon@manjaro.org" ) );
     aboutData->setCustomAuthorText( QString(), MsmCommon::getBugReportLink() );
     setAboutData( aboutData );
     setButtons( KCModule::Default | KCModule::Apply );

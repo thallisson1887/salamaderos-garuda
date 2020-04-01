@@ -1,7 +1,7 @@
 /*
  *  This file is part of Garuda Settings Manager.
  *
- *  Ramon Buldó <ramon@garuda.org>
+ *  Ramon Buldó <ramon@manjaro.org>
  *
  *  Garuda Settings Manager is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -47,7 +47,7 @@ PageKernel::PageKernel( QWidget* parent, const QVariantList& args ) :
                                             KAboutLicense::LicenseKey::GPL_V3,
                                             "(c) 2014 - 2019 Garuda Settings Manager developers" );
     aboutData->addAuthor( "Ramon Buldó",
-                          QStringLiteral( "ramon@garuda.org" ) );
+                          QStringLiteral( "ramon@manjaro.org" ) );
     aboutData->setCustomAuthorText( QString(), MsmCommon::getBugReportLink() );
     setAboutData( aboutData );
     setButtons( KCModule::NoAdditionalButton );

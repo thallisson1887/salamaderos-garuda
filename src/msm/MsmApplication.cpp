@@ -1,7 +1,7 @@
 /*
  *  This file is part of Garuda Settings Manager.
  *
- *  Ramon Buldó <ramon@garuda.org>
+ *  Ramon Buldó <ramon@manjaro.org>
  *  Kacper Piwiński
  *
  *  Garuda Settings Manager is free software: you can redistribute it and/or modify

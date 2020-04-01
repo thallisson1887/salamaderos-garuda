@@ -1,8 +1,8 @@
 /*
  *  This file is part of Garuda Settings Manager.
  *
- *  Roland Singer <roland@garuda.org>
- *  Ramon Buldó <ramon@garuda.org>
+ *  Roland Singer <roland@manjaro.org>
+ *  Ramon Buldó <ramon@manjaro.org>
  *
  *  Garuda Settings Manager is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -51,7 +51,7 @@ LanguagePackagesModule::LanguagePackagesModule( QWidget* parent, const QVariantL
     aboutData->addAuthor( "Ramon Buldó",
                           QStringLiteral( "rbuldo@gmail.com" ) );
     aboutData->addAuthor( "Roland Singer",
-                          QStringLiteral( "roland@garuda.org" ) );
+                          QStringLiteral( "roland@manjaro.org" ) );
     aboutData->setCustomAuthorText( QString(), MsmCommon::getBugReportLink() );
     setAboutData( aboutData );
     setButtons( KCModule::NoAdditionalButton );

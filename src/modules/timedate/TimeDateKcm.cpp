@@ -1,6 +1,6 @@
 /*
  *  Garuda Settings Manager
- *  Ramon Buldó <ramon@garuda.org>
+ *  Ramon Buldó <ramon@manjaro.org>
  *  Kacper Piwiński
  *
  *  Copyright (C) 2007 Free Software Foundation, Inc.

@@ -4,7 +4,7 @@
  *   Kacper Piwiński
  *
  *   Originally from the Garuda Installation Framework
- *   by Roland Singer <roland@garuda.org>
+ *   by Roland Singer <roland@manjaro.org>
  *   Copyright (C) 2007 Free Software Foundation, Inc.
  *
  *   Calamares is free software: you can redistribute it and/or modify
