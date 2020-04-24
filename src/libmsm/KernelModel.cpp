@@ -106,10 +106,7 @@ KernelModel::update()
         newKernel.setLts( ltsKernels.contains( kernel ) );
         newKernel.setRecommended( recommendedKernels.contains( kernel ) );
 
-        if ( ( runningKernel.majorVersion() == newKernel.majorVersion() ) &&
-                ( runningKernel.minorVersion() == newKernel.minorVersion() ) &&
-                ( runningKernel.version() <= newKernel.version() ) &&
-                ( runningKernel.isRealtime() == newKernel.isRealtime() ) )
+        if ( ( runningKernel.package() == newKernel.package() ) )
             newKernel.setRunning( true );
 
         m_kernels.append( newKernel );
@@ -340,21 +337,17 @@ KernelModel::getRunningKernel() const
     env.insert( "LC_MESSAGES", "C" );
     env.insert( "LC_ALL", "C" );
 
-    QProcess uname;
-    uname.setProcessEnvironment( env );
+    QProcess pname;
+    pname.setProcessEnvironment( env );
 
-    uname.start( "uname", QStringList() << "-r" );
-    uname.waitForFinished();
-    QString result = uname.readAllStandardOutput();
-//    result = result.trimmed();
-    uname.close();
+    pname.start( "mhwd-kernel", QStringList() << "-lr" );
+    pname.waitForFinished();
+    QString result = pname.readAllStandardOutput();
+    result = result.trimmed();
+    pname.close();
 
     Kernel kernel;
-    QStringList aux = result.split( ".", QString::SkipEmptyParts );
-    QString version = QString( "%1.%2" ).arg( aux.at( 0 ) ).arg( aux.at( 1 ) );
-    if ( result.contains( "-rt" ) )
-        version.append( "rt" );
-    kernel.setVersion( result );
+    kernel.setPackage( result );
 //    qDebug()<< result;
     return kernel;
 }
@@ -363,7 +356,7 @@ KernelModel::getRunningKernel() const
 QStringList
 KernelModel::getLtsKernels() const
 {
-    return QStringList() << "linux310" << "linux312" << "linux314" << "linux316" << "linux318" << "linux41" << "linux44" << "linux49" << "linux414" << "linux414-rt" << "linux419" << "linux419-rt" << "linux54" << "linux-lts";
+    return QStringList() << "linux-lts";
 }
 
 
