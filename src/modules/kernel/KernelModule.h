@@ -63,6 +63,9 @@ public:
      */
     void defaults();
 
+private slots:
+    void on_refresh_clicked();
+
 private:
     Ui::PageKernel* ui;
     KernelModel* m_kernelModel;
