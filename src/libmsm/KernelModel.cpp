@@ -346,7 +346,20 @@ KernelModel::getRunningKernel() const
     result = result.trimmed();
     pname.close();
 
+    QProcess uname;
+    uname.setProcessEnvironment( env );
+
+    uname.start( "uname", QStringList() << "-r" );
+    uname.waitForFinished();
+    QString result1 = uname.readAllStandardOutput();
+    uname.close();
+
     Kernel kernel;
+    QStringList aux = result1.split( ".", QString::SkipEmptyParts );
+    QString version = QString( "%1.%2" ).arg( aux.at( 0 ) ).arg( aux.at( 1 ) );
+    if ( result1.contains( "-rt" ) )
+        version.append( "rt" );
+    kernel.setVersion( version );
     kernel.setPackage( result );
 //    qDebug()<< result;
     return kernel;
