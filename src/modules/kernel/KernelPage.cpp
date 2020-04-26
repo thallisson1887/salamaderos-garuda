@@ -21,7 +21,7 @@
 #include "KernelPage.h"
 #include "ui_PageKernel.h"
 #include "KernelListViewDelegate.h"
-
+#include "ActionDialog.h"
 #include <QtCore/QProcess>
 #include <QtWidgets/QMessageBox>
 
@@ -35,6 +35,7 @@ KernelPage::KernelPage( QWidget* parent ) :
     setTitle( KernelCommon::getTitle() );
     setIcon( QPixmap( ":/images/resources/tux-garuda.png" ) );
     setName( KernelCommon::getName() );
+    connect( ui->refresh, &QPushButton::clicked, m_kernelModel, &KernelModel::update );
 
     KernelSortFilterProxyModel* proxyKernelModel = new KernelSortFilterProxyModel( this );
     proxyKernelModel->setSourceModel( m_kernelModel );
@@ -69,4 +70,28 @@ KernelPage::load()
 {
     KernelCommon::load( m_kernelModel );
     QApplication::restoreOverrideCursor();
+}
+
+void KernelPage::on_refresh_clicked()
+{
+    QString title = QString( tr( "Refresh" ) );
+    QString message = QString( tr( "Refresh database with pacman -Fy. \nWould you like to continue?" ) );
+
+    QString information = QString( tr( "The following will happen:\n pacman -Fy" ) );
+
+    QStringList arguments;
+    arguments << "--noconfirm" << "-Fy";
+    QVariantMap args;
+    args["arguments"] = arguments;
+    KAuth::Action installAction( QLatin1String( "org.garuda.msm.kernel.install" ) );
+    installAction.setHelperId( QLatin1String( "org.garuda.msm.kernel" ) );
+    installAction.setArguments( args );
+    installAction.setTimeout( std::numeric_limits<int>::max() );
+
+    ActionDialog actionDialog;
+    actionDialog.setInstallAction( installAction );
+    actionDialog.setWindowTitle( title );
+    actionDialog.setMessage( message );
+    actionDialog.writeToTerminal( information );
+    actionDialog.exec();
 }
