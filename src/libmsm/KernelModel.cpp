@@ -80,7 +80,7 @@ KernelModel::update()
             else
             {
                 newKernel.setAvailable( false );
-                newKernel.setUnsupported( true );
+                newKernel.setUnsupported( false );
             }
         }
         newKernel.setInstalled( installedKernelPackages.contains( kernel ) );
