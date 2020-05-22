@@ -29,7 +29,6 @@ MsmApplication::MsmApplication( int& argc, char* argv[] )
     : QApplication( argc, argv ),
       m_mainwindow( 0 )
 {
-    setAttribute(Qt::AA_EnableHighDpiScaling, true);
     setOrganizationName( "Garuda" );
     setOrganizationDomain( "Garuda" );
     setApplicationName( "Garuda Settings Manager" );
@@ -90,6 +89,7 @@ MsmApplication::isDebug()
 MsmWindow*
 MsmApplication::mainWindow()
 {
+    setAttribute(Qt::AA_EnableHighDpiScaling, true);
     return m_mainwindow;
 }
 
