@@ -61,7 +61,7 @@ KernelListViewDelegate::paint( QPainter* painter, const QStyleOptionViewItem& op
 
     QString package = qvariant_cast<QString>( index.data( KernelModel::PackageRole ) );
     QString version = qvariant_cast<QString>( index.data( KernelModel::VersionRole ) );
-    QString name = ( "Linux " + version );
+    QString name = ( package );
     //bool isAvailable = qvariant_cast<bool>( index.data( KernelModel::IsAvailableRole ) );
     bool isInstalled = qvariant_cast<bool>( index.data( KernelModel::IsInstalledRole ) );
     bool isLts = qvariant_cast<bool>( index.data( KernelModel::IsLtsRole ) );
@@ -238,13 +238,13 @@ KernelListViewDelegate::paint( QPainter* painter, const QStyleOptionViewItem& op
     QFont packageFont = option.font;
     packageFont.setPointSize( option.font.pointSize() * 0.9 );
     QFontMetrics packageFontMetrics( packageFont );
-    QSize packageSize = packageFontMetrics.size( Qt::TextSingleLine, package );
+    QSize packageSize = packageFontMetrics.size( Qt::TextSingleLine, version );
     QRectF packageRect( QPointF(), packageSize );
 
     painter->setPen( option.palette.color( QPalette::Normal, QPalette::WindowText ) );
     packageRect.moveTopLeft( nameRect.bottomLeft() );
     painter->setFont( packageFont );
-    painter->drawText( packageRect, Qt::TextSingleLine, package );
+    painter->drawText( packageRect, Qt::TextSingleLine, version );
 
     painter->restore();
 }
