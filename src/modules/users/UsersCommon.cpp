@@ -298,7 +298,8 @@ UsersCommon::Users()
         user.uuid = split.at( 2 ).toInt();
 
         const int minUserUuid { 1000 };
-        if ( user.uuid < minUserUuid || user.username.isEmpty() || user.homePath.isEmpty() )
+        const int maxUserUuid { 65533 };
+        if ( user.uuid < minUserUuid || user.uuid > maxUserUuid || user.username.isEmpty() || user.homePath.isEmpty() )
             continue;
 
         users.append( user );
