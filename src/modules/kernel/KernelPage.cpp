@@ -33,7 +33,8 @@ KernelPage::KernelPage( QWidget* parent ) :
 {
     ui->setupUi( this );
     setTitle( KernelCommon::getTitle() );
-    setIcon( QPixmap( ":/images/resources/tux-garuda.png" ) );
+    QPixmap pix=QIcon::fromTheme("preferences-system").pixmap(48), QIcon(":/images/resources/tux-garuda.png");
+    setIcon( pix );
     setName( KernelCommon::getName() );
     connect( ui->refresh, &QPushButton::clicked, m_kernelModel, &KernelModel::update );
 

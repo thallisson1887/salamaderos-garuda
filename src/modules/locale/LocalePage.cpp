@@ -42,7 +42,8 @@ LocalePage::LocalePage( QWidget* parent ) :
 {
     ui->setupUi( this );
     setTitle( LocaleCommon::getTitle() );
-    setIcon( QPixmap( ":/images/resources/locale.png" ) );
+    QPixmap pix=QIcon::fromTheme("preferences-desktop-locale").pixmap(48), QIcon(":/images/resources/locale.png");
+    setIcon( pix );
     setShowApplyButton( true );
     setName( LocaleCommon::getName() );
 

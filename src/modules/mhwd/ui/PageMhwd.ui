@@ -105,16 +105,25 @@
    </item>
   </layout>
   <action name="installAction">
+   <property name="icon">
+    <iconset theme="list-add"/>
+   </property>
    <property name="text">
     <string>Install</string>
    </property>
   </action>
   <action name="removeAction">
+   <property name="icon">
+    <iconset theme="list-remove"/>
+   </property>
    <property name="text">
     <string>Remove</string>
    </property>
   </action>
   <action name="reinstallAction">
+   <property name="icon">
+    <iconset theme="view-refresh"/>
+   </property>
    <property name="text">
     <string>Reinstall</string>
    </property>

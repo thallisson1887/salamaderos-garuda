@@ -39,7 +39,8 @@ KeyboardPage::KeyboardPage( QWidget* parent ) :
 {
     ui->setupUi( this );
     setTitle( KeyboardCommon::getTitle() );
-    setIcon( QPixmap( ":/images/resources/keyboard.png" ) );
+    QPixmap pix=QIcon::fromTheme("preferences-desktop-keyboard").pixmap(48), QIcon(":/images/resources/keyboard.png");
+    setIcon( pix );
     setShowApplyButton( true );
     setName( KeyboardCommon::getName() );
 

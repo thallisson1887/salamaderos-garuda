@@ -37,7 +37,8 @@ TimeDatePage::TimeDatePage( QWidget* parent ) :
 {
     ui->setupUi( this );
     setTitle( TimeDateCommon::getTitle() );
-    setIcon( QPixmap( ":/images/resources/timedate.png" ) );
+    QPixmap pix=QIcon::fromTheme("preferences-system-time").pixmap(48), QIcon(":/images/resources/timedate.png");
+    setIcon( pix );
     setShowApplyButton( true );
     setName( TimeDateCommon::getName() );
 

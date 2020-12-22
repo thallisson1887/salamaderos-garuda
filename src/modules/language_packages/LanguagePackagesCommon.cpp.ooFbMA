@@ -167,7 +167,7 @@ LanguagePackagesCommon::newParentTreeWidgetItem( Ui::PageLanguagePackages* ui, Q
     item->setSizeHint( 0, QSize( 0, 24 ) );
     item->setExpanded( true );
     item->setFlags( Qt::ItemIsEnabled );
-    QPixmap pix=QIcon::fromTheme("preferences-desktop-locale").pixmap(48), QIcon(":/images/resources/language.png");
+    QPixmap pix=QIcon::fromTheme("yast-language").pixmap(48), QIcon(":/images/resources/language.png");
     item->setIcon( 0, pix );
     return item;
 }

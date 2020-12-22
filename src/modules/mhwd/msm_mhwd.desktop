@@ -1,7 +1,7 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
 Type=Service
-Icon=audio-card
+Icon=video-display
 Exec=kcmshell5 msm_mhwd
 
 X-KDE-Library=msm_mhwd

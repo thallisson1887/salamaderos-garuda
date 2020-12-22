@@ -41,15 +41,18 @@ MsmWindow::MsmWindow( QWidget* parent ) :
     buttonShowAllSettings_clicked();
 
     ui->listWidget->setWordWrap( true );
-    ui->listWidget->addSeparator( tr( "System" ) );
-    addPageWidget( pageLanguage );
-    addPageWidget( pageLanguagePackages );
+    ui->listWidget->addSeparator( tr( "Hardware" ) );
+    addPageWidget( pageMhwd );
     addPageWidget( pageKernel );
+    addPageWidget( pageLanguagePackages );
+    ui->listWidget->addSeparator( tr( "System" ) );
     addPageWidget( pageUsers );
     addPageWidget( pageTimeDate );
-    ui->listWidget->addSeparator( tr( "Hardware" ) );
     addPageWidget( pageKeyboard );
-    addPageWidget( pageMhwd );
+    addPageWidget( pageLanguage );
+
+
+
 
     // Connect signals and slots
     connect( ui->buttonQuit, &QPushButton::clicked,

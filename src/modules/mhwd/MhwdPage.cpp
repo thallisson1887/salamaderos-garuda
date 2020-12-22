@@ -28,7 +28,8 @@ MhwdPage::MhwdPage( QWidget* parent ) :
 {
     ui->setupUi( this );
     setTitle( MhwdCommon::getTitle() );
-    setIcon( QPixmap( ":/icons/gpudriver.png" ) );
+    QPixmap pix=QIcon::fromTheme("video-display").pixmap(48), QIcon(":/images/resources/gpudriver.png");
+    setIcon( pix );
     setShowApplyButton( false );
     setName( MhwdCommon::getName() );
 
@@ -38,9 +39,9 @@ MhwdPage::MhwdPage( QWidget* parent ) :
     ui->treeWidget->setColumnWidth( 2, 100 );
 
     // Context menu actions and icons
-    ui->installAction->setIcon( QIcon::fromTheme( "list-add", QIcon( ":/icons/add.png" ) ) );
-    ui->removeAction->setIcon( QIcon::fromTheme( "list-remove", QIcon( ":/icons/remove.png" ) ) );
-    ui->reinstallAction->setIcon( QIcon::fromTheme( "view-refresh",  QIcon( ":/icons/restore.png" ) ) );
+   // ui->installAction->setIcon( QIcon::fromTheme( "list-add", QIcon( ":/icons/add.png" ) ) );
+   // ui->removeAction->setIcon( QIcon::fromTheme( "list-remove", QIcon( ":/icons/remove.png" ) ) );
+   // ui->reinstallAction->setIcon( QIcon::fromTheme( "view-refresh",  QIcon( ":/icons/restore.png" ) ) );
 
     ui->buttonInstallFree->setText( MhwdCommon::getButtonFreeText() );
     ui->buttonInstallNonFree->setText( MhwdCommon::getButtonNonFreeText() );

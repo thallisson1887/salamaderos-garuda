@@ -30,7 +30,8 @@ LanguagePackagesPage::LanguagePackagesPage( QWidget* parent ) :
 {
     ui->setupUi( this );
     setTitle( LanguagePackagesCommon::getTitle() );
-    setIcon( QPixmap( ":/images/resources/locale-package.png" ) );
+    QPixmap pix=QIcon::fromTheme("preferences-desktop-locale").pixmap(48), QIcon(":/images/resources/locale-package.png");
+    setIcon( pix );
     setName( LanguagePackagesCommon::getName() );
 
     ui->treeWidgetAvailable->setColumnWidth( 0, 250 );

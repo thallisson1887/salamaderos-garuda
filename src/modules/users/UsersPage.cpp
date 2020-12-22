@@ -30,7 +30,8 @@ UsersPage::UsersPage( QWidget* parent ) :
     ui->buttonRemove->setIcon( QIcon::fromTheme( "list-remove", QIcon( ":/icons/remove.png" ) ) );
 
     setTitle( UsersCommon::getTitle() );
-    setIcon( QPixmap( ":/images/resources/users.png" ) );
+    QPixmap pix=QIcon::fromTheme("preferences-desktop-user").pixmap(48), QIcon(":/images/resources/users.png");
+    setIcon( pix );
     setName( UsersCommon::getName() );
 
     // Connect signals and slots
