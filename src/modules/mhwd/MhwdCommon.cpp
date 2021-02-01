@@ -105,7 +105,9 @@ MhwdCommon::load( Ui::PageMhwd* ui )
         for ( std::vector<mhwd::Config*>::iterator conf_iter = ( *dev_iter )->availableConfigs.begin();
                 conf_iter != ( *dev_iter )->availableConfigs.end(); conf_iter++ )
         {
-            if ( !ui->checkBoxShowDangerous->isChecked() &&  (*conf_iter)->priority == 0 )
+            //Check if installed
+            mhwd::Config* installedConfig = getInstalledConfig( &data, ( *conf_iter )->name, ( *conf_iter )->type );
+            if ( !ui->checkBoxShowDangerous->isChecked() && (*conf_iter)->priority == 0 && installedConfig == nullptr )
                 continue;
 
             //Always expand and show devices with configuration
@@ -142,8 +144,6 @@ MhwdCommon::load( Ui::PageMhwd* ui )
                 ui->buttonInstallNonFree->show();
             }
 
-            //Check if installed
-            mhwd::Config* installedConfig = getInstalledConfig( &data, ( *conf_iter )->name, ( *conf_iter )->type );
             if ( installedConfig == nullptr )
                 item->setCheckState( 2, Qt::Unchecked );
             else
