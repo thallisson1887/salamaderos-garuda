@@ -116,6 +116,8 @@ MhwdModule::MhwdModule( QWidget* parent, const QVariantList& args ) :
     } );
     connect( ui->checkBoxShowAll, &QCheckBox::toggled,
              this, &MhwdModule::load );
+    connect( ui->checkBoxShowDangerous, &QCheckBox::toggled,
+             this, &MhwdModule::load );
 }
 
 
