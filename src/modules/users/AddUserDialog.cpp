@@ -104,7 +104,7 @@ void AddUserDialog::buttonCreate_clicked()
     installActionAdd.setHelperId( QLatin1String( "org.garuda.msm.users" ) );
     QVariantMap args;
     QString defaultUserGroups {"video,audio,power,optical,network,lp,scanner,sys"};
-    args["arguments"] = QStringList() << "-m" << "-p" << "" << "-U" << "-G" << defaultUserGroups << username;
+    args["arguments"] = QStringList() << "-m" << "-U" << "-G" << defaultUserGroups << username;
     installActionAdd.setArguments( args );
     KAuth::ExecuteJob* jobAdd = installActionAdd.execute();
     connect( jobAdd, &KAuth::ExecuteJob::newData,
