@@ -5,7 +5,7 @@ pkgname=('garuda-settings-manager' 'garuda-settings-manager-kcm'
          'garuda-settings-manager-notifier' 'garuda-settings-manager-knotifier')
 pkgver=0.5.6
 #_commit=e085b661c3c97e8aa39a5b49896a88a95d84caf9
-pkgrel=1
+pkgrel=2
 pkgdesc="Garuda Linux System Settings Tool"
 arch=('i686' 'x86_64')
 url="https://gitlab.com/garuda-linux/applications/garuda-settings-manager"
