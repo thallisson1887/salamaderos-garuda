@@ -1,0 +1,5 @@
+garuda-settings-manager/
+pkg/
+src/
+*.tar.zst
+*.tar.gz
