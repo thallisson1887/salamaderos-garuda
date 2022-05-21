@@ -5,7 +5,7 @@
 pkgbase=garuda-settings-manager
 pkgname=('garuda-settings-manager' 'garuda-settings-manager-kcm'
          'garuda-settings-manager-notifier' 'garuda-settings-manager-knotifier')
-pkgver=1.0.0
+pkgver=1.0.1
 pkgrel=1
 pkgdesc="Garuda Linux system settings (Manjaro settings manager ported to work with Arch standards and limited to only DKMS drivers)"
 arch=('i686' 'x86_64')
